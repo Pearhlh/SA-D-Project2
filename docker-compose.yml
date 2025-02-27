@@ -1,0 +1,159 @@
+version: '3.8'
+networks:
+  mynetwork:
+    driver: bridge
+services:
+  # MySQL cho Customer Service
+  db_mysql:
+    image: mysql:8.0.41
+    restart: always
+    container_name: mysql_container
+    environment:
+      MYSQL_DATABASE: customers
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      retries: 5
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - "33066:3306"
+    networks:
+      - mynetwork
+
+
+  customer_service:
+    restart: always
+    container_name: customer_service_container
+    build: ./CustomerService
+    ports:
+      - "8000:8000"
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    volumes:
+      - ./CustomerService:/app
+    depends_on:
+      db_mysql:
+        condition: service_healthy
+    networks:
+      - mynetwork
+
+
+  # PostgreSQL cho các microservices khác
+  db_postgressql:
+    image: postgres:16
+    restart: always
+    container_name: db_postgressql_container
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - .dbdata_microservices:/var/lib/postgresql/data
+    ports:
+      - "54322:5432"
+    networks:
+      - mynetwork
+
+
+  cart_service:
+    restart: always
+    build: ./CartService
+    container_name: cart_service_container
+    ports:
+      - "8001:8001"
+    command: 'python manage.py runserver 0.0.0.0:8001'
+    volumes:
+      - ./CartService:/app
+    depends_on:
+      - db_postgressql
+    networks:
+      - mynetwork
+
+
+  order_service:
+    restart: always
+    container_name: order_service_container
+    build: ./OrderService
+    ports:
+      - "8002:8002"
+    command: 'python manage.py runserver 0.0.0.0:8002'
+    volumes:
+      - ./OrderService:/app
+    depends_on:
+      - db_postgressql
+    networks:
+      - mynetwork
+
+
+  paying_service:
+    restart: always
+    container_name: paying_service_container
+    build: ./PayingService
+    ports:
+      - "8003:8003"
+    command: 'python manage.py runserver 0.0.0.0:8003'
+    volumes:
+      - ./PayingService:/app
+    depends_on:
+      - db_postgressql
+    networks:
+      - mynetwork
+
+
+  shipping_service:
+    restart: always
+    container_name: shipping_service_container
+    build: ./ShippingService
+    ports:
+      - "8004:8004"
+    command: 'python manage.py runserver 0.0.0.0:8004'
+    volumes:
+      - ./ShippingService:/app
+    depends_on:
+      - db_postgressql
+    networks:
+      - mynetwork
+
+
+  # MongoDB cho Item Service
+  db_mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: mongodb_container
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - mynetwork
+
+
+  item_service:
+    restart: always
+    container_name: item_service_container
+    environment:
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+    build: ./ItemService
+    ports:
+      - "8005:8005"
+    command: 'python manage.py runserver 0.0.0.0:8005'
+    volumes:
+      - ./ItemService:/app
+    depends_on:
+      - db_mongodb
+    networks:
+      - mynetwork
+
+volumes:
+  mongodb_data:
+  .dbdata:
+  .dbdata_microservices:
