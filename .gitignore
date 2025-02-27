@@ -4,4 +4,4 @@
 .dbdata
 .dbdata_microservices
 .vscode/
-.debug.py
+debug.py
