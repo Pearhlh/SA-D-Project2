@@ -53,6 +53,7 @@ class RegisterUser(APIView):
                     'username': user.username,
                     'email': user.email,
                     'role': user.role,
+                    'bio' : user.bio
                 }
             }, status=status.HTTP_201_CREATED)
 

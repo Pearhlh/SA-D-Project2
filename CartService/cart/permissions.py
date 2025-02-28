@@ -35,11 +35,10 @@ class IsAdmin(VerifyJWT):
 class IsSeller(VerifyJWT):
     required_roles = ["admin","seller"]
 
-    def has_object_permission(self, request, view, obj):
-        if request.user['role'] == 'admin':
-            return True
-        return obj.owner_id == int(request.user["id"])
-
 class IsBuyer(VerifyJWT):
     required_roles = ["admin","buyer"]
+    def has_object_permission(self, request, view, obj):
+        # if request.user['role'] == 'admin':
+        #     return True
+        return obj.user_id == int(request.user["id"])
 

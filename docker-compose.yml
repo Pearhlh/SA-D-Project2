@@ -20,7 +20,7 @@ services:
       interval: 10s
       retries: 5
     volumes:
-      - .dbdata:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     ports:
       - "33066:3306"
     networks:
@@ -30,6 +30,11 @@ services:
   customer_service:
     restart: always
     container_name: customer_service_container
+    environment:
+      MYSQL_DATABASE: customers
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     build: ./CustomerService
     ports:
       - "8000:8000"
@@ -52,7 +57,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - .dbdata_microservices:/var/lib/postgresql/data
+      - db_postgres:/var/lib/postgresql/data
     ports:
       - "54322:5432"
     networks:
@@ -63,6 +68,10 @@ services:
     restart: always
     build: ./CartService
     container_name: cart_service_container
+    environment:
+      POSTGRES_DB: carts
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "8001:8001"
     command: 'python manage.py runserver 0.0.0.0:8001'
@@ -139,6 +148,8 @@ services:
     restart: always
     container_name: item_service_container
     environment:
+      - MONGO_HOST=${MONGO_HOST}
+      - MONGO_DB_NAME=${MONGO_DB_NAME}
       - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
       - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
       - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
@@ -155,5 +166,5 @@ services:
 
 volumes:
   mongodb_data:
-  .dbdata:
-  .dbdata_microservices:
+  dbdata:
+  db_postgres:

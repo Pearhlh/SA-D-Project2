@@ -1,7 +1,5 @@
 .dbdata/
 *.sock
 .env
-.dbdata
-.dbdata_microservices
 .vscode/
 debug.py

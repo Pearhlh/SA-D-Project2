@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-from pathlib import Path
-import cloudinary.api
 import os
+from pathlib import Path
+
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,13 +86,12 @@ WSGI_APPLICATION = 'ItemService.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'items',  # Tên database
+        'NAME': os.getenv('MONGO_DB_NAME'),
         'CLIENT': {
-            'host': 'mongodb://admin:Huycode12003.@db_mongodb:27017/item_service?authSource=admin',
+            'host': os.getenv('MONGO_HOST')
         }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
