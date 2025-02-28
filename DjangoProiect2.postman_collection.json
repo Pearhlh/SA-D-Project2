@@ -1,0 +1,1462 @@
+{
+	"info": {
+		"_postman_id": "77457f9f-ce79-432f-bee4-522f55d4bb9f",
+		"name": "DjangoProiect2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25773108",
+		"_collection_link": "https://gold-robot-567499.postman.co/workspace/Spring~fad49a21-4856-438e-8945-8406d6d28693/collection/25773108-77457f9f-ce79-432f-bee4-522f55d4bb9f?action=share&source=collection_link&creator=25773108"
+	},
+	"item": [
+		{
+			"name": "ItemService",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "api/categories/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "bd21b5fb72079b2807c0234fa146379d678992f8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"description\": \"Các dòng Laptop\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/categories/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/categories/:id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "bd21b5fb72079b2807c0234fa146379d678992f8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"description\": \"Các dòng Laptop\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/categories/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/categories/",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Detail</th>\r",
+											"    </tr>\r",
+											"    <tr>\r",
+											"        <td>{{response.detail}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return { response: pm.response.json() }\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjUzNzU5LCJqdGkiOiJiZmMwYWMzZDRhZjY0ZGE5YTEwNTQ5Y2JjYjU1Mjc5ZCIsInVzZXJfaWQiOjF9.kxj1Jnk1bAfzGVMOKBYLl41lK9ppwkYPMkEvZ4OuBXk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mobile 2\",\r\n    \"description\": \"Các dòng điện thoại di động\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/categories/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/categories/",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Detail</th>\r",
+											"    </tr>\r",
+											"    <tr>\r",
+											"        <td>{{response.detail}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return { response: pm.response.json() }\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjYzMzE4LCJqdGkiOiJmOTZhNzNhNjA1MTU0OTczYTEwNmU1MTAwYTcxMWUxYyIsInVzZXJfaWQiOjF9.g3BeQ5hAuv52v6p9HzjX5CPD0ooU4OfoTD7kgFh-TBE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Book\",\r\n    \"description\": \"Các dòng sách\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/categories/5/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"categories",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/categories",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Detail</th>\r",
+											"    </tr>\r",
+											"    <tr>\r",
+											"        <td>{{response.detail}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return { response: pm.response.json() }\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjYzMzE4LCJqdGkiOiJmOTZhNzNhNjA1MTU0OTczYTEwNmU1MTAwYTcxMWUxYyIsInVzZXJfaWQiOjF9.g3BeQ5hAuv52v6p9HzjX5CPD0ooU4OfoTD7kgFh-TBE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Book\",\r\n    \"description\": \"Các dòng sách\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/categories/5/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"categories",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Item",
+					"item": [
+						{
+							"name": "api/items/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzUzMDkxLCJqdGkiOiJkNzg4NzgzYmI1ZTg0MTFmOGE2ZDVlZTI5ZTA2ODc4MyIsInVzZXJfaWQiOjN9.7qAVKsLTEcLlLbW_8C1DqJmyjx43pJCBuUJrZBak0V4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/items/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/items/:id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzEwNTgxLCJqdGkiOiIyODk1YTFmMDQ5OWI0YjRlYjY5NjgwYzNlYzc1ZDM2ZiIsInVzZXJfaWQiOjF9.3-7_F0vZurm1Li6zTck4NMRXBVW8En_8w1_ZzcBXX4A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/items/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"items",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/items/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzExMzk4LCJqdGkiOiI0YjcxODg1YzlmY2M0NDM0OTYyMDBjZDMzN2YxYTFiMyIsInVzZXJfaWQiOjF9.LasEw-hce4A5HQ4DLivYvq-EVpEGicM0_79GOcMTgGM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "IPhone 15 Pro Max 512GB",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Điện thoại cao cấp",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999.99\t",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efec659-9e72-4890-b5ba-f9411eee8132"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/items/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"items",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/items/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjYzOTU2LCJqdGkiOiI3YmU2NTNjYWEyMmE0YmYzYTY4ZDQyYTU4MWZmZTIzZSIsInVzZXJfaWQiOjJ9.sHj9gU_ptQ9RDMMUBFZYK2qjyFrD-w32gtTdZuSRYJE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "IPhone 15 Pro Max 512GB",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Điện thoại cao cấp",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999.99\t",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efec659-9e72-4890-b5ba-f9411eee8132"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/items/6/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"items",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/items",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzE0MzgzLCJqdGkiOiI0ODg4ZWE3MWUwNzc0MGRkYTllZjkyM2I3YjNmMTExNyIsInVzZXJfaWQiOjJ9.E4KCoVHe8v5LOrirM963myVVotYUTdl9lSj6jvfz4Ow",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "IPhone 15 Pro Max 512GB",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Điện thoại cao cấp",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999.99\t",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1efec659-9e72-4890-b5ba-f9411eee8132"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8005/api/items/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8005",
+									"path": [
+										"api",
+										"items",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CustomerService",
+			"item": [
+				{
+					"name": "api/customers/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/register/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"TrangTran\",\r\n  \"password\": \"Huycode12003.\",\r\n  \"email\": \"trangTranAccounty@gmail.com\",\r\n  \"name\": \"TrangTran\",\r\n  \"bio\": \"No gain No pain.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/login/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ElPearl\",\r\n    \"password\" : \"Huycode12003.\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/token/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjYzOTU2LCJqdGkiOiI3YmU2NTNjYWEyMmE0YmYzYTY4ZDQyYTU4MWZmZTIzZSIsInVzZXJfaWQiOjJ9.sHj9gU_ptQ9RDMMUBFZYK2qjyFrD-w32gtTdZuSRYJE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Timobay\",\r\n    \"password\" : \"Hungcode12003.\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/token/refresh/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDE0MTU3LCJpYXQiOjE3NDA0MTM4NTcsImp0aSI6ImFlNDhlMTIxZjNhZTQ4MzZiZmMyYTE0ZjBmYjY3YWQzIiwidXNlcl9pZCI6NH0.LMOyhOoFr_kvdMRPpkxeVv-1OTyJpfi3aoEku91dTFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDUwMDI1NywiaWF0IjoxNzQwNDEzODU3LCJqdGkiOiI4ZDNjYmZiNGQ0MTQ0Zjg4OTY2Zjc0ODkwYjIyYmE4NiIsInVzZXJfaWQiOjR9.telJi-hK7dWoomOesWIMxWyRfZkyprdvx9ubJ9CHYPw\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/verify-token/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/verify-token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"verify-token",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CartService",
+			"item": [
+				{
+					"name": "api/carts/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzE0MzgzLCJqdGkiOiI0ODg4ZWE3MWUwNzc0MGRkYTllZjkyM2I3YjNmMTExNyIsInVzZXJfaWQiOjJ9.E4KCoVHe8v5LOrirM963myVVotYUTdl9lSj6jvfz4Ow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/carts/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/user/3/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzUzMDkxLCJqdGkiOiJkNzg4NzgzYmI1ZTg0MTFmOGE2ZDVlZTI5ZTA2ODc4MyIsInVzZXJfaWQiOjN9.7qAVKsLTEcLlLbW_8C1DqJmyjx43pJCBuUJrZBak0V4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/carts/user/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carts",
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzUzMDkxLCJqdGkiOiJkNzg4NzgzYmI1ZTg0MTFmOGE2ZDVlZTI5ZTA2ODc4MyIsInVzZXJfaWQiOjN9.7qAVKsLTEcLlLbW_8C1DqJmyjx43pJCBuUJrZBak0V4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"item_id\": 9,\r\n    \"quantity\": 2,\r\n    \"price\": 999.99\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/carts/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzUzMDkxLCJqdGkiOiJkNzg4NzgzYmI1ZTg0MTFmOGE2ZDVlZTI5ZTA2ODc4MyIsInVzZXJfaWQiOjN9.7qAVKsLTEcLlLbW_8C1DqJmyjx43pJCBuUJrZBak0V4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/carts/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carts",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzEzNjc5LCJqdGkiOiJmNzY3ZTM0MzgzYTE0OTk0OWQ1ODRiODViMmE5MzkwMSIsInVzZXJfaWQiOjN9.GJ6KL5euU3v_QbXTHAnZ4jM5VHo7xUSQhgo68iVbSgg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/carts/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carts",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderService",
+			"item": [
+				{
+					"name": "orders/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzI4ODM3LCJqdGkiOiIxNjU0OGU0YjM1OGI0ZDMzYWZjNjVjMTcyZjQzZWI2ZSIsInVzZXJfaWQiOjN9.VOlRSpSBiKH9CnWBN65eVH5TKzkoSFlzg7UhS3dL1o0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cart_item_ids\": [2]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8002/api/orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders/ :id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzI4ODM3LCJqdGkiOiIxNjU0OGU0YjM1OGI0ZDMzYWZjNjVjMTcyZjQzZWI2ZSIsInVzZXJfaWQiOjN9.VOlRSpSBiKH9CnWBN65eVH5TKzkoSFlzg7UhS3dL1o0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cart_item_ids\": [2]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8002/api/orders/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"orders",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders/create/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzUzMDkxLCJqdGkiOiJkNzg4NzgzYmI1ZTg0MTFmOGE2ZDVlZTI5ZTA2ODc4MyIsInVzZXJfaWQiOjN9.7qAVKsLTEcLlLbW_8C1DqJmyjx43pJCBuUJrZBak0V4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\" : \"22 ngõ 206 Trương Định, Hoàng Mai, Hà Nội\",\r\n  \"cart_item_ids\": [39]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8002/api/orders/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"orders",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders/cancel/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzI4ODM3LCJqdGkiOiIxNjU0OGU0YjM1OGI0ZDMzYWZjNjVjMTcyZjQzZWI2ZSIsInVzZXJfaWQiOjN9.VOlRSpSBiKH9CnWBN65eVH5TKzkoSFlzg7UhS3dL1o0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cart_item_ids\": [2]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8002/api/orders/1/cancel/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"orders",
+								"1",
+								"cancel",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paying",
+			"item": [
+				{
+					"name": "/api/payments/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzU4MzcyLCJqdGkiOiI5ZDYyMGU3MWQzMTQ0NGY1YjgxNmM1M2YzMWU0ZGNmMyIsInVzZXJfaWQiOjN9.do-q--PA6W_x1hkZkDZu1Y3V0bqC2kLZrqrY0ttLCTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8003/api/payments/69/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8003",
+							"path": [
+								"api",
+								"payments",
+								"69",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/payments/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzU3NzYxLCJqdGkiOiIxYmM4MzJmMDU3ZmQ0MzQ4OTM5ZDZlNjhhYTBlNjdlMyIsInVzZXJfaWQiOjJ9.rXkhF63AV_DU5UVZYs2Z3XyaGWZ36tIiP4VBywta1iE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8003/api/payments/69/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8003",
+							"path": [
+								"api",
+								"payments",
+								"69",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shipping",
+			"item": [
+				{
+					"name": "/api/shipping/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzU3NzYxLCJqdGkiOiIxYmM4MzJmMDU3ZmQ0MzQ4OTM5ZDZlNjhhYTBlNjdlMyIsInVzZXJfaWQiOjJ9.rXkhF63AV_DU5UVZYs2Z3XyaGWZ36tIiP4VBywta1iE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8004/api/shipping/70/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8004",
+							"path": [
+								"api",
+								"shipping",
+								"70",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/shipping/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNzU2MzUyLCJqdGkiOiI1M2EwNmFkMjcwNjQ0ZGRlYmU0ZGRmZmQzMzdlODM3NSIsInVzZXJfaWQiOjR9.dzvsx6FjMOVCgdFP67eUKXbVcxnS8BT5xKVRk7pA5iM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8004/api/shipping/70/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8004",
+							"path": [
+								"api",
+								"shipping",
+								"70",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
