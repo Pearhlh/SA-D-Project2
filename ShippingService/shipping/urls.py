@@ -1,10 +1,7 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ShippingViewSet
-
-router = DefaultRouter()
-router.register(r'shipping', ShippingViewSet)
+from django.urls import path
+from .views import CreateShippingAPIView, UpdateShippingStatusAPIView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("shipping/", CreateShippingAPIView.as_view(), name="create-shipping"),
+    path("shipping/<int:order_id>/", UpdateShippingStatusAPIView.as_view(), name="update-shipping-status"),
 ]

@@ -105,6 +105,10 @@ services:
   paying_service:
     restart: always
     container_name: paying_service_container
+    environment:
+      POSTGRES_DB: paying
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     build: ./PayingService
     ports:
       - "8003:8003"
@@ -120,6 +124,10 @@ services:
   shipping_service:
     restart: always
     container_name: shipping_service_container
+    environment:
+      POSTGRES_DB: shipping
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     build: ./ShippingService
     ports:
       - "8004:8004"

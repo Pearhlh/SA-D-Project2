@@ -1,5 +1,4 @@
-.dbdata/
 *.sock
 .env
-.vscode/
+.vscode
 debug.py
