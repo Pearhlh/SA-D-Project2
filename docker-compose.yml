@@ -86,6 +86,10 @@ services:
   order_service:
     restart: always
     container_name: order_service_container
+    environment:
+      POSTGRES_DB: orders
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     build: ./OrderService
     ports:
       - "8002:8002"

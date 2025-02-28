@@ -6,7 +6,7 @@ class Customer(AbstractUser):
         ('admin', 'Admin'),
         ('seller', 'Seller'),
         ('buyer', 'Buyer'),
-        ('guest', 'Guest'),
+        ('shipper', 'Shipper'),
     )
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='buyer')
     name = models.CharField(max_length=200, null=True)
